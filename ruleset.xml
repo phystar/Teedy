@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<ruleset name="ruleset"
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 https://pmd.sourceforge.io/ruleset_2_0_0.xsd">
+  <description>Custom ruleset that includes CC, WMC, CBO, LCOM and LoC</description>
+<!-- Lines of Code -->
+  <rule ref="category/java/design.xml/NcssCount" />
+
+  <!-- Cyclomatic Complexity -->
+  <rule ref="category/java/design.xml/CyclomaticComplexity" />
+
+
+  <!-- Weighted Methods per Class -->
+  <rule ref="category/java/design.xml/ExcessiveClassLength" />
+
+  <!-- Coupling Between Objects -->
+  <rule ref="category/java/design.xml/CouplingBetweenObjects" />
+
+  <!-- Lack of Cohesion in Methods -->
+  <rule ref="category/java/design.xml/GodClass" />
+
+
+</ruleset>
