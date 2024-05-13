@@ -1,16 +1,17 @@
 pipeline {
     agent any
     stages {
-        stage('PMD') {
-            steps {
-                sh 'mvn pmd:pmd'
-            }
-        }
         stage('Build') {
             steps {
                 sh 'mvn -B -DskipTests clean package'
             }
         }
+        stage('PMD') {
+            steps {
+                sh 'mvn pmd:pmd'
+            }
+        }
+        
         stage('Test') {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'UNSTABLE') {
